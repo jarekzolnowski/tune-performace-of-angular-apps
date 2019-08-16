@@ -18,13 +18,4 @@ export class PostsListComponent {
   onAdd(): void {
     this.add.emit({userId: 100, id: 1001, title: 'New Post', body: 'This is nearly created Post body', status: 1});
   }
-
-  expand(): void {
-    console.log('expand');
-  }
-
-  getStatus(status: number): string {
-    console.log('get status');
-    return status === 1 ? 'valid' : 'invalid';
-  }
 }
