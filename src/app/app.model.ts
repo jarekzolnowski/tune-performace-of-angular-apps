@@ -3,6 +3,7 @@ export type Post = Readonly<{
   id: number;
   title: string;
   body: string;
+  status: number;
 }>;
 
 export type User = Readonly<{
