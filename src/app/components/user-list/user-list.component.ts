@@ -1,9 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { User } from '../../app.model';
 
 @Component({
   selector: 'app-user-list',
-  templateUrl: 'user-list.component.html'
+  templateUrl: 'user-list.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class UserListComponent {

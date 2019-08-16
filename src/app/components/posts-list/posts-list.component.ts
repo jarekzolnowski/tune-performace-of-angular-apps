@@ -1,9 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Post, User } from '../../app.model';
 
 @Component({
   selector: 'app-posts-list',
-  templateUrl: 'posts-list.component.html'
+  templateUrl: 'posts-list.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class PostsListComponent {
