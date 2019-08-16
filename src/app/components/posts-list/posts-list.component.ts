@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Post, User } from '../../app.model';
+import { memoize } from 'lodash-decorators';
 
 @Component({
   selector: 'app-posts-list',
@@ -23,6 +24,7 @@ export class PostsListComponent {
     console.log('expand');
   }
 
+  @memoize()
   getStatus(status: number): string {
     console.log('get status');
     return status === 1 ? 'valid' : 'invalid';
