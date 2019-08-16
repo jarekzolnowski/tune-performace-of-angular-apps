@@ -9,10 +9,3 @@ export type User = Readonly<{
   name: string;
 }>;
 
-export type UserResponse = Readonly<{
-  id: number,
-  name: string,
-  username: string,
-  email: string,
-  phone: string
-}>;
