@@ -19,11 +19,6 @@ export class PostsListComponent {
     this.add.emit({userId: 100, id: 1001, title: 'New Post', body: 'This is nearly created Post body'});
   }
 
-  shouldExpand({body}): boolean {
-    console.log('should expand');
-    return body.length > 170;
-  }
-
   expand(): void {
     console.log('expand');
   }
