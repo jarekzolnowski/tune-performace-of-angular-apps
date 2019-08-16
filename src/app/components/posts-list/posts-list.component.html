@@ -6,6 +6,6 @@
   <div *ngFor="let post of newPots" class="card-body bg-light">
     <h5 class="card-title">{{post.title}}</h5>
     <p class="card-text">{{post.body}}</p>
-    <a *ngIf="post.body | shouldExpand: 170" href="#" class="card-link" (click)="expand()">More details</a>
+    <a *ngIf="post | shouldExpand: 'body': 170" href="#" class="card-link" (click)="expand()">More details</a>
   </div>
 </div>
