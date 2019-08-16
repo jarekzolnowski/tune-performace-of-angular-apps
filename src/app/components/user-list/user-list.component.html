@@ -1,0 +1,10 @@
+<div class="card">
+  <h5 class="card-header bg-dark text-light d-flex justify-content-between">
+    <input type="text" class="form-control" placeholder="Add user.." [(ngModel)]="user" (keydown.enter)="onAdd(user)">
+  </h5>
+  <div class="card-body bg-light">
+    <ul>
+      <li *ngFor="let user of users">{{user.name}}</li>
+    </ul>
+  </div>
+</div>

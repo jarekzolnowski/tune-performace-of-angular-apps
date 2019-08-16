@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Current time {{ time | date:'HH:MM:ss' }} </h1>
+
+  <div class="row">
+    <div class="col-8">
+      <app-posts-list [posts]="posts" [users]="users" (add)="addPost($event)"></app-posts-list>
+    </div>
+    <div class="col-3">
+      <app-user-list [users]="users" (add)="addUser($event)"></app-user-list>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="card">
+  <h5 class="card-header bg-dark text-light d-flex justify-content-between">
+    <span>Post list</span>
+    <button class="btn btn-primary d-flex justify-content-end" (click)="onAdd()">Add</button>
+  </h5>
+  <div *ngFor="let post of posts" class="card-body bg-light">
+    <h5 class="card-title">{{post.title}}</h5>
+    <p class="card-text">{{post.body}}</p>
+    <a *ngIf="shouldExpand(post)" href="#" class="card-link" (click)="expand()">More details</a>
+  </div>
+</div>
