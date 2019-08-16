@@ -9,4 +9,3 @@ export type Post = Readonly<{
 export type User = Readonly<{
   name: string;
 }>;
-

@@ -1,15 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
-
-type Value<T> = {
-  [K in keyof T]: string;
-};
+import { memoize } from 'lodash-decorators';
 
 @Pipe({
-  name: 'shouldExpand'
+  name: 'isStatusValid'
 })
-export class ShouldExpandPipe<T, K extends keyof T> implements PipeTransform {
-  transform(value: Value<T>, prop: K, maxCharNumber: number): boolean {
-    console.log('should expand');
-    return value[prop].length > maxCharNumber;
+export class IsStatusValidPipe implements PipeTransform {
+  @memoize()
+  transform(status: number): string {
+    console.log('is valid');
+    return status === 1 ? 'valid' : 'invalid';
   }
 }
