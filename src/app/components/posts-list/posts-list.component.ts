@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Post, User } from '../../app.model';
 
 @Component({
@@ -6,15 +6,14 @@ import { Post, User } from '../../app.model';
   templateUrl: 'posts-list.component.html'
 })
 
-export class PostsListComponent implements OnChanges {
-  @Input() posts: Post[];
+export class PostsListComponent {
+  @Input() set posts(value: Post[]) {
+    console.log('Post List component changed! ');
+    this.newPots = value;
+  }
   @Input() users: User[];
   @Output() add: EventEmitter<Post> = new EventEmitter<Post>();
-
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('Post List component changed! ');
-    console.log(changes);
-  }
+  newPots: Post[];
 
   onAdd(): void {
     this.add.emit({userId: 100, id: 1001, title: 'New Post', body: 'This is nearly created Post body'});

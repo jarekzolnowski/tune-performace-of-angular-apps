@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    setInterval(() => this.time = new Date(), 1000);
+    // setInterval(() => this.time = new Date(), 1000);
     this.appService.getPosts().subscribe(posts => this.posts = posts);
     this.appService.getUsers().subscribe(users => this.users = users);
   }
