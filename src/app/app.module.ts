@@ -5,14 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PostsListComponent } from './components/posts-list/posts-list.component';
 import { UserListComponent } from './components/user-list/user-list.component';
-import { ShouldExpandPipe } from './app.pipes';
+import { IsStatusValidPipe } from './app.pipes';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostsListComponent,
     UserListComponent,
-    ShouldExpandPipe
+    IsStatusValidPipe
   ],
   imports: [
     HttpClientModule,
