@@ -1,12 +1,15 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Post } from './app.model';
+
+type Value<T> = {
+  [K in keyof T]: string;
+};
 
 @Pipe({
   name: 'shouldExpand'
 })
-export class ShouldExpandPipe implements PipeTransform {
-  transform(post: Post, prop: string, maxCharNumber): any {
+export class ShouldExpandPipe<T, K extends keyof T> implements PipeTransform {
+  transform(value: Value<T>, prop: K, maxCharNumber: number): boolean {
     console.log('should expand');
-    return post[prop].length > maxCharNumber;
+    return value[prop].length > maxCharNumber;
   }
 }
